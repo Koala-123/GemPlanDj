@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scheduler</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: none; center/cover; 
+            font-family: 'Montserrat', sans-serif; 
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 99%;
+            z-index: 1000;
+        }
+
+        header img {
+            width: 188px;
+            margin-right: 10px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            width: 50%; 
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 2em; 
+        }
+
+        p {
+            font-size: 1.2em; 
+        }
+
+        #redirectButton {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="video-background" autoplay muted loop>
+        <source src="Topographic Textures _ After Effects _ Topographic Design _ Topographic Map  _ Background hd.mp4" type="video/mp4">
+        
+       
+    </video>
+
+    <header>
+        <div>
+            <img src="C:\Users\lalit\Downloads\logo.png" alt="GemPlanner Logo">
+        </div>
+        <!-- Add your button onclick event for redirection -->
+        <a href="{%url 'gchat'%}" id="redirectButton">
+            <img src="redirect.png" alt="Redirect Button">
+        </a>
+    </header>
+
+    <main>
+        <div class="content">
+            <h2>What is GemPlanner</h2>
+            <p>In most to-do list apps, there’s usually not enough customization or tends to be clunky with too many options. To combat that, we’ve integrated an AI-powered planner which arms itself with the user’s preferences to provide a hassle-free production of a daily schedule.</p>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scheduler</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: none; center/cover; /* Replace the path with your image file path */
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 99%;
+            z-index: 1000;
+        }
+
+        header img {
+            width: 188px;
+            margin-right: 10px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            margin-top: 60px;
+        }
+
+        #sidebar {
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: width 0.3s ease;
+            overflow-x: hidden;
+            margin-top: 0;
+            width: 80px; /* Increase width */
+            height: 100%;
+            box-sizing: border-box;
+            background: none;
+        }
+
+        #sidebar.retracted {
+            width: 80px;
+        }
+
+        .tab {
+            padding: 10px;
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+            border: none; /* Remove border */
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none; /* Remove background */
+        }
+
+        .tab img {
+            width: 40px; /* Increase width */
+            margin-right: 5px;
+        }
+
+        .tab:hover {
+            background: none;
+            color: #777;
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .content h2,
+        .content p {
+            color: #FFFFFF; /* Green color */
+        }
+    </style>
+</head>
+<body>
+
+    <video id="video-background" autoplay muted loop>
+        <source src="Topographic Textures _ After Effects _ Topographic Design _ Topographic Map  _ Background hd.mp4" type="video/mp4">
+        <!-- Provide additional source elements for different video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div>
+            <img src="C:\Users\lalit\Downloads\GemPlanner-removebg-preview (2).png" alt="GemPlanner Logo">
+        </div>
+        <button onclick="toggleSidebar()"></button>
+    </header>
+
+    <main>
+        <div id="sidebar">
+            <a href="#" class="tab" onclick="showTab('tool-content')">
+                <img src="chat-box-removebg-preview.png" alt="Tool Icon">
+            </a>
+            <a href="#" class="tab" onclick="showTab('stored-plans-content')">
+                <img src="C:\Users\lalit\Downloads\list-removebg-preview.png"Stored Plans Icon">
+            </a>
+            
+        </div>
+
+        <div class="content" id="tool-content">
+            <!--<h2>GemAI</h2>-->
+            <form>
+                <input type="text" id="fname" name="fname"><br>
+                </form>
+                {{response}}
+        </div>
+
+        <div class="content" id="stored-plans-content">
+            <h2>GemPlans</h2>
+            <p>This is where the stored plans content will be displayed.</p>
+        </div>
+
+        
+    </main>
+
+    <script>
+        function showTab(tabContentId) {
+            const contentElements = document.querySelectorAll('.content');
+            contentElements.forEach(element => {
+                element.style.display = 'none';
+            });
+
+            const selectedTabContent = document.getElementById(tabContentId);
+            if (selectedTabContent) {
+                selectedTabContent.style.display = 'block';
+            }
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('retracted');
+        }
+    </script>
+
+</body>
+</html>

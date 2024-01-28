@@ -1,7 +1,7 @@
 import pathlib
 import textwrap
 import datetime
-
+from .main import fnidentificn
 
 import google.generativeai as genai
 
@@ -102,3 +102,45 @@ def viewPending():
 '''
 def generalQuery(prompt):
     model.generate_content(prompt)
+
+def mainStuff(prompt):
+    fn=fnidentificn(prompt)
+
+    if fn==1:
+        addTask(prompt)
+        return "Gemplan successfully added"
+    
+    elif fn==2:
+        editTask(prompt)
+        return "Changes successfully made"
+    
+    elif fn==3:
+        removeGemplan(prompt)
+        return "Gemplan successfully removed"
+    
+    elif fn==4:
+        markGemplan(prompt)
+        return "Marked Gemplan as completed"
+    
+    elif fn==5:
+        OP="All gemplans: \n"
+        for i in gemPlan1:
+            OP+=f"Task: {i} Date: {gemPlan1[i][0]} Completed:{gemPlan1[i][1]}\n"
+        return OP
+    
+    elif fn==6:
+        OP="Completed Gemplans: \n"
+        for i in gemPlan1:
+            if gemPlan1[i][1]==True:
+                OP+=f"Task: {i} Date: {gemPlan1[i][0]} Completed:{gemPlan1[i][1]}\n"
+        return OP
+    
+    elif fn==7:
+        OP="Pending gemplans \n"
+        for i in gemPlan1:
+            if gemPlan1[i][1]==False:
+                OP+=f"Task: {i} Date: {gemPlan1[i][0]} Completed:{gemPlan1[i][1]}\n"
+        return OP
+    
+    elif fn==8:
+        return model.generate_content(prompt).text
