@@ -61,10 +61,16 @@ In the below prompt, extract the task/event, date and time and when to be remind
 
 def editTask(prompt):
     Try=f'''
-For the given below prompt, Identify the task mentioned (or gemplan. Assume gemplan is another term for task or event) and identify the changes needed to be made:-
+For the given below prompt, Identify the task mentioned (or gemplan. Assume gemplan is another term for task or event) and identify the changes needed to be made to a dictionary in python:-
 "{prompt}"
     '''
-    ...
+    response=model.generate_content(Try)
+    Dict=eval(response.text[(response.text).find('{'):(response.text).find('}')+1])
+
+    details=list(Dict.values())
+    
+    gemPlan1.create(name=details[0],date=convertDateTime(details[1]),is_completed=False)
+    gemPlan1.save()
 
 def removeTask(prompt):
     ...
