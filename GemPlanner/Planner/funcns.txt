@@ -11,17 +11,17 @@
 Required functions
 addGemPlan()- done
 
-editGemplan()
+editGemplan() DONE
 
-removeGemplan()
+removeGemplan() DONE
 
-markGemplan()
+markGemplan() DONE
 
-viewGemplan()
+viewGemplan() DONE
 
-viewCompleted()
+viewCompleted() DONE
 
-viewPending()
+viewPending() DONE
 
 generalQuery()
 

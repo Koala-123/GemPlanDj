@@ -1,5 +1,5 @@
 from django.db import models
-
+'''
 # Create your models here.
 class GemQueries(models.Model):
     prompt=models.TextField()
@@ -15,4 +15,4 @@ class GemPlans():
 
     def __str__(self) -> str:
         return self.name
-
+'''
