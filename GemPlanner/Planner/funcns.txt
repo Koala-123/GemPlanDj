@@ -1,0 +1,27 @@
+1. The user wants to add a gemplan
+2. The user wants to edit a gemplan
+3. The user wants to remove a gemplan
+4. The user wants to mark a gemplan as completed
+5. The user wants to view gemplans
+6. The user wants to view completed gemplans
+7. The user wants to view pending gemplans
+8. The user is asking a general query
+9. None of the above
+
+Required functions
+addGemPlan()- done
+
+editGemplan()
+
+removeGemplan()
+
+markGemplan()
+
+viewGemplan()
+
+viewCompleted()
+
+viewPending()
+
+generalQuery()
+
